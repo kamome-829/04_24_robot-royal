@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/battle.css">
+    <title>robobattol</title>
+</head>
+
+<body>
+    <main class="main" id="main">
+
+        <div class="hp_gage">
+
+            <div class="my_hp">
+                <h2 class="my_name" id="my_name">" "</h2>
+                <div id="my_life-frame">
+                    <div id="my_life-bar"></div>
+                    <div id="my_life-mark"></div>
+                </div>
+
+                <div class="my_img" id="my_img">
+                    <img src="img/robotto_1.png" height="100%" id="my_img_now">
+                </div>
+            </div>
+
+            <div class="enemy_hp">
+                <h2 class="enemy_name"></h2>
+                <div id="enemy_life-frame">
+                    <div id="enemy_life-bar"></div>
+                    <div id="enemy_life-mark"></div>
+                </div>
+
+                <div class="enemy_img">
+                    <img height="100%" id="enemy_img_now">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="down" id="down">
+            <div class="choose">
+                <div id="attack" class="attack">
+                    <p class="choose_text">攻撃</p>
+                </div>
+                <div id="counter" class="counter">
+                    <p class="choose_text">ためる</p>
+                </div>
+                <div id="item" class="item">
+                    <p id="choose_item" class="choose_text">アイテム　　　残り3回</p>
+                </div>
+                <div id="heal" class="heal">
+                    <p id="choose_heal" class="choose_text">回復　　　残り3回</p>
+                </div>
+                <div id="strong" class="strong">
+                    <p id="choose_strong" class="choose_text">必殺技　　　残り1回</p>
+                </div>
+            </div>
+            <div class="text">
+                <p class="text_explanation" id="text_explanation">
+                </p>
+            </div>
+        </div>
+        <div class="winorlose_text" id="winorlose_text">
+            <h1 class="winorlose">aaa</h1>
+        </div>
+        <div class="button" id="button">
+            <a href="battle.html" class="new_button">もう一回</a>
+            <a href="index.html" class="new_button">タイトルへ</a>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="creation.js"></script>
+    <script src="game.js"></script>
+    <script>
+        $(function () {
+
+            let create = new CREATE();
+            //let game = new GAME();
+
+            create.game_sturt();
+            create.choose();
+
+        });
+    </script>
+</body>
+
+</html>

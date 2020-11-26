@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/serect.css">
+    <title>mypage</title>
+</head>
+
+<body>
+    <main>
+        <div class="left">
+            <h3 class="left_title">設定</h3>
+            <div class="change_st">
+                <button id="change_name" href="#" class="btn-sticky">名前</button>
+            </div>
+
+            <div class="change_name">
+                <button id="change_appearance" href="#" class="btn-sticky">見た目</button>
+            </div>
+
+            <div class="change_color">
+                <button id="change_status" href="#" class="btn-sticky">ステータス</button>
+            </div>
+            <div class="change_reset">
+                <button id="new_game" href="#" class="btn-sticky">All Clear</button>
+            </div>
+        </div>
+
+        <div id="rite" class="rite">
+            <div id="title" class="title">
+                <h1>create</h1>
+                <div class="title_text">
+                    <span class="type" id="typewriter"></span>
+                </div>
+                <div class="battle_buttun">
+                    <a href="battle.html" class="ch_buttun_b" id="ka">かんたん</a>
+                    <a href="battle.html" class="ch_buttun_b" id="fu">ふつう</a>
+                    <a href="battle.html" class="ch_buttun_b" id="mu">むずかしい</a>
+                </div>
+                <div class="button">
+                    <a href="index.html" class="new_button">タイトルへ</a>
+                </div>
+            </div>
+
+            <div id="name" class="name">
+                <h2>名前の変更</h2>
+                <p>ロボットにオリジナルの名前をつけよう！！「ランダム」ボタンを押すと名前がランダムにつきます。世界に1つだけのオリジナルロボットネームを考えよう！</p>
+            </div>
+
+            <div id="appearance" class="appearance">
+                <h2>見た目の変更</h2>
+                <p>ロボットの見た目を変更しよう！！見た目は全部で17種類用意されています。左右の矢印で見た目を変更することができます。</p>
+            </div>
+
+            <div id="status" class="status">
+                <h2>ステータスの変更</h2>
+                <p>ロボットのステータスを変更しよう！！ステータスは「力」、「防御」、「体力」、「素早さ」、「クリティカル」の5つのステータスを調整できる！調整できるステータスポイントは合計100ポイント！ステータスを調整し、強いロボットを作成しよう！噂によると調整できない隠しステータスがあるかも・・・
+                </p>
+            </div>
+
+            <div id="ch_name" class="ch_name">
+                <h2>名前の変更</h2>
+                <div>
+                    <p class="ch_name_title">NEW NAME</p>
+                    <input class="text_area" id="text_area"></input>
+                    <a class="ch_buttun_radom" id="radom">Radom</a>
+                </div>
+                <div class="ch_now">
+                    <p class="ch_name_title">NOW NAME</p>
+                    <p class="ch_now_text">" "</p>
+                </div>
+                <div class="ch_buttun_top">
+                    <a class="ch_buttun" id="save_name">Save</a>
+                    <a class="ch_buttun" id="clear_name">Clear</a>
+                </div>
+            </div>
+
+            <div id="ch_appearance" class="ch_appearance">
+                <h2 class="ch_appearance_title">見た目の変更</h2>
+                <div class="page_num">
+                    <p class="img_page_text">0 / 16</p>
+                </div>
+                <div class="ch_appearance_main">
+                    <a class="appearance_left" id="appearance_left"></a>
+                    <div class="img">
+                        <img src="img/robotto_0.png" class="appearance_img" id="appearance_img">
+                    </div>
+                    <a class="appearance_right" id="appearance_right"></a>
+                </div>
+                <p class="ch_name_title">現在の設定ページ</p>
+                <p class="set_img">" "</p>
+                <div class="ch_buttun_top_appearance">
+                    <a class="ch_buttun" id="save_appearance">Save</a>
+                    <a class="ch_buttun" id="clear_appearance">Clear</a>
+                </div>
+            </div>
+
+            <div id="ch_status" class="ch_status">
+                <h2>ステータスの変更</h2>
+                <p class="ch_status_total" id="ch_status_total">残りSP・・・ 100 pt</p>
+                <div class="g_status_top">
+                    <div class="g_status">
+                        <canvas id="chart" class="chart" height="250" width="250"></canvas>
+                    </div>
+                </div>
+
+                <div class="change_pa">
+                    <div class="change_str" id="main_str">
+                        <button class="pa_buttun">力</button>
+                        <p class="pa_text" id="total_str">total 20pt</p>
+                        <p class="pa_point" id="variation_str">+ 0pt</p>
+                    </div>
+                    <div class="change_def" id="main_def">
+                        <button class="pa_buttun">防御</button>
+                        <p class="pa_text" id="total_def">total 20pt</p>
+                        <p class="pa_point" id="variation_def">+ 0pt</p>
+                    </div>
+                    <div class="change_hp" id="main_hp">
+                        <button class="pa_buttun">体力</button>
+                        <p class="pa_text" id="total_hp">total 20pt</p>
+                        <p class="pa_point" id="variation_hp">+ 0pt</p>
+                    </div>
+                    <div class="change_spd" id="main_spd">
+                        <button class="pa_buttun">素早さ</button>
+                        <p class="pa_text" id="total_spd">total 20pt</p>
+                        <p class="pa_point" id="variation_spd">+ 0pt</p>
+                    </div>
+                    <div class="change_crl" id="main_crl">
+                        <button class="pa_buttun">クリティカル</button>
+                        <p class="pa_text" id="total_crl">total 20pt</p>
+                        <p class="pa_point" id="variation_crl">+ 0pt</p>
+                    </div>
+                </div>
+
+                <div class="chang_ten">
+                    <button id="minus_ten" class="chage_math_left">-</button>
+                    <p class="pa_textt">10</p>
+                    <button id="plus_ten" class="chage_math_right">+</button>
+                </div>
+
+                <div class="chang_one">
+                    <button id="minus_one" class="chage_math_left">-</button>
+                    <p class="pa_textt">1</p>
+                    <button id="plus_one" class="chage_math_right">+</button>
+                </div>
+
+                <div class="ch_buttun_top_3">
+                    <a class="ch_buttun" id="save_status">Save</a>
+                    <a class="ch_buttun" id="clear_status">Clear</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer_now">
+            <h1>プレビュー</h1>
+            <div>
+                <p class="view_title">~ My Robotto ~</p>
+            </div>
+            <div class="view_name">
+                <p class="ch_now_text">" "</p>
+            </div>
+            <div class="footer_main">
+                <div class="footer_view">
+                    <img src="img/noimage.png" class="appearance_img" id="view_img">
+                </div>
+                <div class="footer_guraf">
+                    <canvas id="chart_view" class="chart_view"></canvas>
+                </div>
+            </div>
+            <div class="comand">
+                <input class="comand_text" id="comand_text" placeholder="ここにコマンドを打ち込むと・・・"></input>
+                <a class="ch_buttun_radom" id="comand_buttun">OK?</a>
+            </div>
+            <div class="hidden_view" id="hidden_view">
+                <h2>特殊ステータス</h1>
+                    <p id="hidden_text" class="hidden_text">" "</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="creation.js"></script>
+    <script>
+        $(function () {
+            //メインのテキストが1文字づつ出てくる処理
+            const typewriter = (param) => {
+
+                let el = document.querySelector(param.el);
+                let speed = param.speed;
+                let string = param.string.split("");
+
+                string.forEach((char, index) => {
+                    setTimeout(() => {
+                        el.textContent += char;
+                    }, speed * index);
+                });
+            };
+
+            typewriter({
+                el: "#typewriter", //要素
+                string: "名前、ステータス、見た目を変更して自分だけのロボットを作ろう！自分が変更したいところのボタンを押し、「Save」で保存し「Clear」で初期状態へ戻り、左設定の一番下にある「All Clear」ですべての項目が初期状態へ戻ります。作成しているロボットは下の「ビュー」で確認することができます。ロボットが完成したらコンピュータと対戦しましょう！  ※設定は1つづつしか行えません。設定しているボタンを押すとクリエイト画面に戻れます。", //文字列
+                speed: 50 //速度
+            });
+
+            //各ボタンの押したか判定用変数
+            var clicked_name = false;
+            var clicked_appearance = false;
+            var clicked_status = false;
+
+            //名前のボタンにマウスを乗せた時に発動
+
+            $('#change_name').hover(function () {
+
+                if (clicked_name == false && clicked_appearance == false && clicked_status == false) {
+                    console.log('マウスオーバーしました！');
+                    document.getElementById("title").style.display = "none";
+                    document.getElementById("name").style.display = "block";
+                    $("#name").animate({ 'marginLeft': '0%' }, 500);
+                }
+
+            }, function () {
+
+                if (clicked_name == false && clicked_appearance == false && clicked_status == false) {
+                    //元に戻る
+                    document.getElementById("title").style.display = "block";
+                    document.getElementById("name").style.display = "none";
+                    $("#name").animate({ 'marginLeft': '100%' }, 500);
+                }
+
+            });
+
+
+            //見た目のボタンにマウスを乗せた時に発動
+            $('#change_appearance').hover(function () {
+
+                if (clicked_name == false && clicked_appearance == false && clicked_status == false) {
+                    console.log('マウスオーバーしました！');
+                    document.getElementById("title").style.display = "none";
+                    document.getElementById("appearance").style.display = "block";
+                    $("#appearance").animate({ 'marginLeft': '0%' }, 500);
+                }
+
+            }, function () {
+
+                if (clicked_name == false && clicked_appearance == false && clicked_status == false) {
+                    //元に戻る
+                    document.getElementById("title").style.display = "block";
+                    document.getElementById("appearance").style.display = "none";
+                    $("#appearance").animate({ 'marginLeft': '100%' }, 500);
+                }
+
+            });
+
+            //ステータスのボタンにマウスを乗せた時に発動
+            $('#change_status').hover(function () {
+
+                if (clicked_name == false && clicked_appearance == false && clicked_status == false) {
+                    console.log('マウスオーバーしました！');
+                    document.getElementById("title").style.display = "none";
+                    document.getElementById("status").style.display = "block";
+                    $("#status").animate({ 'marginLeft': '0%' }, 500);
+                }
+
+            }, function () {
+
+                if (clicked_name == false && clicked_appearance == false && clicked_status == false) {
+                    //元に戻る
+                    document.getElementById("title").style.display = "block";
+                    document.getElementById("status").style.display = "none";
+                    $("#status").animate({ 'marginLeft': '100%' }, 500);
+                }
+
+            });
+
+
+            //名前のボタンを押したときの処理
+            $('#change_name').on('click', function () {
+
+                if (clicked_name == false) {
+                    document.getElementById("title").style.display = "none";
+                    document.getElementById("name").style.display = "none";
+                    document.getElementById("ch_name").style.display = "block";
+                    //他ボタンを消す
+                    $("#change_appearance").prop("disabled", true);
+                    $("#change_status").prop("disabled", true);
+                    $('#change_appearance').css('opacity', '0.2');
+                    $('#change_status').css('opacity', '0.2');
+
+                    clicked_name = true;
+                    $("#ch_name").animate({ 'marginLeft': '0%' }, 300);
+                } else {
+                    document.getElementById("title").style.display = "block";
+                    document.getElementById("ch_name").style.display = "none";
+                    //他ボタンを復活
+                    $("#change_appearance").prop("disabled", false);
+                    $("#change_status").prop("disabled", false);
+                    $('#change_appearance').css('opacity', '1');
+                    $('#change_status').css('opacity', '1');
+
+                    clicked_name = false;
+                    $("#ch_name").animate({ 'marginLeft': '100%' }, 300);
+                }
+
+            });
+
+            //見た目のボタンを押したときの処理
+            $('#change_appearance').on('click', function () {
+
+                if (clicked_appearance == false) {
+                    document.getElementById("title").style.display = "none";
+                    document.getElementById("appearance").style.display = "none";
+                    document.getElementById("ch_appearance").style.display = "block";
+                    //他ボタンを消す
+                    $("#change_name").prop("disabled", true);
+                    $("#change_status").prop("disabled", true);
+                    $('#change_name').css('opacity', '0.2');
+                    $('#change_status').css('opacity', '0.2');
+
+                    clicked_appearance = true;
+                    $("#ch_appearance").animate({ 'marginLeft': '0%' }, 300);
+                } else {
+                    document.getElementById("title").style.display = "block";
+                    document.getElementById("ch_appearance").style.display = "none";
+                    //他ボタンを復活
+                    $("#change_name").prop("disabled", false);
+                    $("#change_status").prop("disabled", false);
+                    $('#change_name').css('opacity', '1');
+                    $('#change_status').css('opacity', '1');
+
+                    clicked_appearance = false;
+                    $("#ch_appearance").animate({ 'marginLeft': '100%' }, 300);
+                }
+            });
+
+            //ステータスのボタンを押したときの処理
+            $('#change_status').on('click', function () {
+
+                if (clicked_status == false) {
+                    document.getElementById("title").style.display = "none";
+                    document.getElementById("status").style.display = "none";
+                    document.getElementById("ch_status").style.display = "block";
+                    //他ボタンを消す
+                    $("#change_name").prop("disabled", true);
+                    $("#change_appearance").prop("disabled", true);
+                    $('#change_appearance').css('opacity', '0.2');
+                    $('#change_name').css('opacity', '0.2');
+
+                    clicked_status = true;
+                    $("#ch_status").animate({ 'marginLeft': '0%' }, 300);
+                } else {
+                    document.getElementById("title").style.display = "block";
+                    document.getElementById("ch_status").style.display = "none";
+                    //他ボタンを復活
+                    $("#change_name").prop("disabled", false);
+                    $("#change_appearance").prop("disabled", false);
+                    $('#change_appearance').css('opacity', '1');
+                    $('#change_name').css('opacity', '1');
+
+                    clicked_status = false;
+                    $("#ch_status").animate({ 'marginLeft': '100%' }, 300);
+                }
+            });
+
+
+            //ここから名前セーブイベント   
+
+            let create = new CREATE();
+            //1.Save クリックイベント
+            create.create_stert()
+            create.name_save();
+            create.appearance_save();
+            create.status_save();
+            create.reset();
+
+            //隠しボタン
+            $('#comand_buttun').on('click', function () {
+
+                var input_message = document.getElementById("comand_text").value;
+                if (input_message == "hidden status open") {
+                    document.getElementById("hidden_view").style.display = "block";
+                } else {
+                    document.getElementById("hidden_view").style.display = "none";
+                }
+
+                if (input_message == "my strongest") {
+                    hp = 100;
+                    str = 100;
+                    def = 100;
+                    spd = 100;
+                    crl = 100;
+
+                    var numb = Math.floor(Math.random() * hidden_sts.length);
+                    var hidden_ram = hidden_sts[numb];
+                    var now_hidden = hidden_ram;
+
+                    var status_obj = {
+                        "str": str,
+                        "def": def,
+                        "hp": hp,
+                        "spd": spd,
+                        "crl": crl,
+                        "variation_str": variation_str,
+                        "variation_def": variation_def,
+                        "variation_hp": variation_hp,
+                        "variation_spd": variation_spd,
+                        "variation_crl": variation_crl,
+                        "total_sp": total_sp,
+                        "hidden": now_hidden,
+                        "hidden_num": numb
+                    }
+
+                    var status_json = JSON.stringify(status_obj);
+                    localStorage.setItem('status_json', status_json);
+                    $('#hidden_text').text(now_hidden);
+                    func_view();
+                    func();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

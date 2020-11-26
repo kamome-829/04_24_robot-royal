@@ -1,0 +1,650 @@
+/*全体のcss*/
+body{
+	width: 100%;
+}
+
+/*メインのcss*/
+main{
+	text-align:center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 800px;
+}
+
+/*左のボタン*/
+.left{
+	background-image: url(../img/メインレフト.jpg);
+    background-size: cover;
+	background-position: center;
+	width: 20%;
+	height: 100%;
+	border: solid;
+	border-color: rgb(222, 238, 135);
+	text-align: left;
+}
+
+.btn-sticky {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  margin-bottom: 5px;
+}
+
+.btn-sticky:hover{
+  opacity: 0.6;
+}
+
+.btn-sticky:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.left_title{
+	text-align: center;
+}
+
+/*右のテキストcss*/
+.rite{
+    width: 80%;
+	border-left: black;
+	border-bottom: solid;
+	border-color: rgb(227, 243, 136);
+	background-color: rgba(177, 241, 169, 0.3);
+	margin-bottom: -4px;
+}
+
+.title{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1{
+	font-size: 50px;
+	font-family: 'HGP行書体';
+	color: rgb(53, 5, 5);
+	opacity: 0.7;
+}
+
+.title_text{
+	padding-left: 8%;
+	padding-right: 8%;
+	margin-top: 100px;
+}
+
+#typewriter::after {
+    content: "|";
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*バトルへボタン*/
+.ch_buttun_b {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff8181;
+  color: #FFF;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #bd6565;
+  transition: .4s;
+  margin: 40px;
+}
+
+.ch_buttun_b:hover{
+	opacity: 0.8;
+}
+
+.ch_buttun_b:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
+
+
+/*最初は隠れているname部分*/
+.name{
+	height: 100%;
+	background-color: rgba(204, 224, 20, 0.3);
+	display: none;
+	margin-left: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.name h2{
+	padding-top: 100px;
+}
+
+.name p{
+	padding-top: 100px;
+}
+
+/*最初は隠れているappearance部分*/
+.appearance{
+	height: 100%;
+	background-color: rgb(204, 224, 20, 0.3);
+	display: none;
+	margin-left: 100%;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+.appearance h2{
+	padding-top: 100px;
+}
+
+.appearance p{
+	padding-top: 100px;
+}
+
+/*最初は隠れているstatus部分*/
+.status{
+	height: 100%;
+	background-color: rgb(204, 224, 20, 0.3);
+	display: none;
+	margin-left: 100%;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+.status h2{
+	padding-top: 100px;
+}
+
+.status p{
+	padding-top: 100px;
+}
+
+h2{
+margin-top: 0px;
+}
+
+
+/*各ボタン全体の処理*/
+button{
+border: none;
+outline: none; /* クリックしたときに表示される枠線を消す */
+background: transparent; /* 背景の灰色を消す */
+margin: 10px;
+}
+
+
+.change_reset{
+	margin-top: 450px;
+}
+
+
+/*名前ボタンを押したら出てくる部分*/
+.ch_name{
+    display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	padding-top: 20px;
+	background-color: rgba(145, 228, 224, 0.3);
+	display: none;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-left: 100%;
+}
+
+/*名前のテキスト*/
+.ch_name_title{
+	font-size: 18px;
+	border-bottom: double 5px #FFC778;
+}
+
+/*各テキストエリアの設定*/
+.text_area{
+	margin-top: 20px;
+	padding-top: -10px;
+
+}
+
+.ch_appearance{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	background-color: rgba(145, 228, 224, 0.3);
+	display: none;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-left: 100%;
+}
+
+.ch_status{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	background-color: rgba(248, 212, 234, 0.3);
+	display: none;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-left: 100%;
+}
+
+
+/*今の名前*/
+.ch_now{
+	margin-top: 60px;
+}
+
+.ch_now_text{
+	font-size: 24px;
+}
+
+/*ランダムボタン*/
+.ch_buttun_radom {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 16px;
+  color: #84a01f;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border-bottom: 4px solid #84a01f;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.7);
+  margin-left: 50px;
+}
+
+.ch_buttun_radom:hover{
+  opacity: 0.8;
+}
+
+.ch_buttun_radom:active {
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+
+/*ここから見た目設定画面に関する記述*/
+.ch_appearance_title{
+	padding-top: 20px;
+}
+
+/*見た目画面のメイン設定*/
+.ch_appearance_main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+
+/*左右ボタンのcss*/
+.appearance_left{
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-right: 30px solid rgb(61, 72, 235);
+  border-bottom: 30px solid transparent;
+  opacity: 0.7;
+}
+
+.appearance_left:hover{
+	opacity: 1;
+}
+
+.appearance_left:active{
+  opacity: 0.5;
+}
+
+.appearance_right{
+  width: 0;
+  height: 0;
+  border-left: 30px solid rgb(247, 48, 48);
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  opacity: 0.7;
+}
+
+.appearance_right:hover{
+	opacity: 1;
+}
+
+.appearance_right:active{
+  opacity: 0.5;
+}
+
+/*真ん中の画像*/
+.img{
+	height: 350px;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.appearance_img{
+	height: 100%;
+}
+
+/*ここからステータスの記述*/
+/*ステータスチャートの設定*/
+
+.ch_status_total{
+	font-size: 18px;
+}
+
+.g_status{
+   height: 250px;
+   width: 250px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/*ステータスプレートの設定*/
+.change_pa{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.change_str{
+	background-color: rgb(252, 185, 185);
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.change_str:hover{
+	opacity: 1;
+}
+
+
+.change_def{
+	background-color: rgb(197, 185, 252);
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.change_def:hover{
+	opacity: 1;
+}
+
+.change_hp{
+	background-color: rgb(185, 252, 194);
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.change_hp:hover{
+	opacity: 1;
+}
+
+.change_spd{
+	background-color: rgb(196, 245, 242);
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.change_spd:hover{
+	opacity: 1;
+}
+
+.change_crl{
+	background-color: rgb(246, 250, 191);
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.change_crl:hover{
+	opacity: 1;
+}
+
+.pa_buttun{
+	font-size: 18px;
+	font-family: 'HG正楷書体-PRO';
+}
+
+.pa_text{
+	font-family: 'Comic Sans MS';
+}
+
+.pa_point{
+	font-family: 'Book Antiqua';
+}
+
+/*下のステータス変化ボタン*/
+.chang_ten{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 10px;
+}
+
+.chang_one{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.pa_textt{
+	font-size: 24px;
+	font-family: 'Comic Sans MS';
+}
+
+.chage_math_left{
+	border: solid;
+	border-radius: 10px;
+	border-color: rgb(235, 92, 92);
+	font-size: 40px;
+	margin-top: 18px;
+	padding-right: 12px;
+	padding-left: 12px;
+	margin-right: 26px;
+	background-color: rgb(250, 246, 195);
+	opacity: 0.7;
+}
+
+.chage_math_left:hover{
+	opacity: 1;
+}
+
+.chage_math_right{
+	border: solid;
+	border-radius: 10px;
+	border-color: rgb(236, 92, 92);
+	font-size: 40px;
+	margin-top: 18px;
+	margin-left: 26px;
+	background-color: rgb(248, 245, 206);
+	opacity: 0.7;
+}
+
+.chage_math_right:hover{
+	opacity: 1;
+}
+
+/*セーブ、クリア、ボタン*/
+.ch_buttun_top{
+   margin-top: 80px;
+}
+
+.ch_buttun_top_3{
+	margin-top: 0px;
+}
+
+.ch_buttun_top_appearance{
+	margin-top: 0px;
+}
+
+.ch_buttun {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff8181;
+  color: #FFF;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #bd6565;
+  transition: .4s;
+  margin: 40px;
+}
+
+.ch_buttun:hover{
+	opacity: 0.8;
+}
+
+.ch_buttun:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
+
+/*一番下のボタン*/
+.new_button {
+	font-size: 21px;
+	display: inline-block;
+	padding: 10px 150px;
+	text-decoration: none;
+	border-radius: 4px;
+	color: #ffffff;
+	background-image: linear-gradient(#eb88d5 0%, #eb88d5 100%);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #635864;
+    opacity: 0.7;
+	margin-top: 140px;
+}
+
+.new_button:hover{
+    opacity: 0.9;
+}
+
+.new_button:active {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+		box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+		border-bottom: none;
+}
+
+
+/*ここからフッターの設定*/
+footer{
+	background-image: url(../img/フッター背景.png);
+    background-size: cover;
+	background-position: center;
+	padding-top: 5px;
+	height: 800px;
+}
+
+footer h1{
+	text-align: center;
+}
+
+.view_title{
+	font-size: 28px;
+	font-family: 'Monotype Corsiva';
+	color: rgb(255, 40, 40);
+}
+
+.footer_main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.view_name{
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.view_name p{
+	font-size: 50px;
+}
+
+.footer_view{
+	height: 300px;
+	margin-left: 15%;
+	width: 40%;
+}
+
+.footer_view img{
+	width: auto;
+}
+
+.footer_guraf{
+   height: 250px;
+   width: 60%;
+}
+
+.chart_view{
+	width: 100%;
+	height: 80%;
+}
+
+.hidden_view{
+	margin-top: 30px;
+	text-align: center;
+	display: none;
+}
+
+.hidden_text{
+	color: darkorchid;
+	font-size: 30px;
+}
+
+
+.comand{
+	margin-top:100px;
+	margin-left: 12%;
+}
+
+.comand_text{
+	width: 300px;
+	height: 30px;
+}
+
+/*フッターの一番下ロボット選択*/
+
+.footer_down{
+	background-color: rgb(229, 252, 207);
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.robo_save{
+	border: solid;
+	height: 120px;
+	width: 90px;
+}

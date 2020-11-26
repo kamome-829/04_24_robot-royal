@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/title.css">
+    <title>mypage</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1 class="a">ロボ ロワ</h1>
+        <h2>~ robot Royal ~</h2>
+        <div class="button">
+            <a href="serect.html" class="new_button" id="new_game_1">続きから</a>
+            <a href="serect.html" class="new_button" id="new_game_0">初めから</a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="creation.js"></script>
+    <script>
+        $(function () {
+            let save = new SAVE();
+            save.reset();
+        });
+    </script>
+</body>
+
+</html>

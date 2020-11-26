@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #output li {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>realtime chat</h1>
+    <ul>
+        <li>
+            <label for="name">name</label>
+            <input type="text" id="name">
+        </li>
+        <li>
+            <textarea name="" id="text" cols="30" rows="10"></textarea>
+        </li>
+        <li>
+            <button id="send">send</button>
+        </li>
+    </ul>
+    <ul id="output"></ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "",
+            authDomain: "rensyu-5e229.firebaseapp.com",
+            databaseURL: "https://rensyu-5e229.firebaseio.com",
+            projectId: "rensyu-5e229",
+            storageBucket: "rensyu-5e229.appspot.com",
+            messagingSenderId: "345540310990",
+            appId: "1:345540310990:web:cd5867d07d886158e01d9f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        function convertFromFirestoreTimestampToDatetime(timestamp) {
+            const _d = timestamp ? new Date(timestamp * 1000) : new Date();
+            const Y = _d.getFullYear();
+            const m = (_d.getMonth() + 1).toString().padStart(2, '0');
+            const d = _d.getDate().toString().padStart(2, '0');
+            const H = _d.getHours().toString().padStart(2, '0');
+            const i = _d.getMinutes().toString().padStart(2, '0');
+            const s = _d.getSeconds().toString().padStart(2, '0');
+            return `${Y}/${m}/${d} ${H}:${i}:${s}`;
+        }
+
+        const db = firebase.firestore().collection(`chat`);
+        $('#send').on('click', function () {
+            db.add({
+                name: $('#name').val(),
+                text: $('#text').val(),
+                time: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+            $('#text').val('');
+        });
+
+        db.orderBy('time', 'desc').onSnapshot(function (querySnapshot) {
+            let str = '';
+            querySnapshot.docs.forEach(function (doc) {
+                const id = doc.id;
+                const data = doc.data();
+                const datetime = convertFromFirestoreTimestampToDatetime(data.time.seconds);
+                str += '<li id="' + id + '">';
+                str += '<p>' + data.name + '</p>';
+                str += '<p>' + datetime + '</p>';
+                str += '<p>' + data.text + '</p>';
+                str += '</li>';
+            });
+            $('#output').html(str);
+        });
+    </script>
+</body>
+
+</html>

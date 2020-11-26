@@ -1,0 +1,302 @@
+body{
+	text-align:center;
+	width: 100%;
+	height: 600px;
+}
+
+main{
+    background-image: url(../img/buttle_1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+}
+
+.hp_gage{
+    width: 100%;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+/*敵と自分の名前*/
+.my_name{
+    color:rgb(100,255,255);
+    text-shadow    : 
+       2px  2px 1px #003366,
+      -2px  2px 1px #003366,
+       2px -2px 1px #003366,
+      -2px -2px 1px #003366,
+       2px  0px 1px #003366,
+       0px  2px 1px #003366,
+      -2px  0px 1px #003366,
+       0px -2px 1px #003366; 
+}
+
+.enemy_name{
+    color:rgb(255,100,100);
+    text-shadow    : 
+       2px  2px 1px #003366,
+      -2px  2px 1px #003366,
+       2px -2px 1px #003366,
+      -2px -2px 1px #003366,
+       2px  0px 1px #003366,
+       0px  2px 1px #003366,
+      -2px  0px 1px #003366,
+       0px -2px 1px #003366; 
+}
+
+/*ここから自分と敵のｈｐバーについて記述*/
+.my_hp{
+    width: 50%;
+}
+
+.enemy_hp{
+    width: 50%;
+}
+
+#my_life-frame {
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(10, 0, 50, 0.6);
+    display: flex;
+    padding: 3px 3px;
+}
+
+#my_life-bar {
+    height: 3px;
+    background-color: rgb(0, 255, 255);
+    transition: 300ms
+}
+
+#my_life-mark {
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    filter: saturate(500%);
+    box-shadow: 0 0 5px 3px rgb(200, 255, 255),
+                0 0 7px 7px rgb(100, 255, 255);
+}
+
+#enemy_life-frame {
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(10, 0, 50, 0.6);
+    display: flex;
+    padding: 3px 3px;
+}
+
+#enemy_life-bar {
+    height: 3px;
+    background-color: rgb(255, 100, 100);
+    transition: 300ms
+}
+
+#enemy_life-mark {
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    filter: saturate(500%);
+    box-shadow: 0 0 5px 3px rgb(200, 255, 255),
+                0 0 7px 7px rgb(255, 100, 100);
+}
+
+#btns-wrap {
+    width: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#increase-btn,#decrease-btn {
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: dodgerblue;
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    user-select: none;
+}
+
+#increase-btn:active,#decrease-btn:active {
+    transform: translate(2px,2px);
+    box-shadow: none;
+}
+
+
+/*画像*/
+
+.my_img{
+    height: 280px;
+    margin-top: 50px;
+}
+
+.enemy_img{
+    height: 280px;
+    margin-top: 50px;
+
+}
+
+
+/*一番下の選択やテキスト*/
+
+.down{
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.text{
+    width: 70%;
+    height: 180px;
+    border: solid;
+    background: rgba(0,0,0,0.8);
+    text-align: left;
+}
+
+.text p{
+    color: #fff;
+}
+
+.choose{
+    width: 30%;
+    height: 180px;
+    border: solid;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.attack{
+    width: 100%;
+    display: block;
+}
+
+.attack:hover{
+    background: rgba(75, 74, 74, 0.8);
+}
+
+.attack:active{
+    background: rgba(14, 13, 13, 0.8);
+}
+
+.counter{
+    width: 100%;
+    display: block;
+}
+
+.counter:hover{
+    background: rgba(75, 74, 74, 0.8);
+}
+
+.counter:active{
+    background: rgba(14, 13, 13, 0.8);
+}
+
+.none{
+pointer-events:none;
+}
+
+.item{
+    width: 100%;
+    display: block;
+    
+}
+
+.item:hover{
+    background: rgba(75, 74, 74, 0.8);
+}
+
+.item:active{
+    background: rgba(14, 13, 13, 0.8);
+}
+
+.heal{
+    width: 100%;
+    display: block;
+}
+
+.heal:hover{
+    background: rgba(75, 74, 74, 0.8);
+}
+
+.heal:active{
+    background: rgba(14, 13, 13, 0.8);
+}
+
+.strong{
+    width: 100%;
+    display: block;
+}
+
+.strong:hover{
+    background: rgba(75, 74, 74, 0.8);
+}
+
+.strong:active{
+    background: rgba(14, 13, 13, 0.8);
+}
+
+.choose_text{
+    color: #fff;
+    margin: 6px;
+}
+
+.button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.new_button {
+	font-size: 21px;
+	display: inline-block;
+	padding: 8px 100px;
+	text-decoration: none;
+	border-radius: 4px;
+	color: #000000;
+	background-image: linear-gradient(#18db12 0%, #1de63f 100%);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #29572f;
+    opacity: 0.7;
+	margin-top: 10px;
+}
+
+.new_button:hover{
+    opacity: 0.9;
+}
+
+.new_button:active {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+		box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+		border-bottom: none;
+}
+
+.winorlose_text{
+display: none;
+}
+
+.winorlose{
+    font-size: 72px;
+color: rgb(255, 255, 255);
+text-shadow    : 
+       2px  2px 1px #003366,
+      -2px  2px 1px #003366,
+       2px -2px 1px #003366,
+      -2px -2px 1px #003366,
+       2px  0px 1px #003366,
+       0px  2px 1px #003366,
+      -2px  0px 1px #003366,
+       0px -2px 1px #003366; 
+}
